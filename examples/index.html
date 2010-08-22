@@ -1,0 +1,526 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+	<head>
+		<title>jQuery slideshow plugin // Marcel Eichner // Ephigenia</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="jQuery.slideshow, slideshow Plugin, jquery slideshow plugin, simple plugin, easy slideshow, slideshow callback, jquery gallery, javascript slideshow" />
+		<meta name="robots" content="index, follow" />
+		<meta http-equiv="imagetoolbar" content="no" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="Marcel Eichner" />
+		<meta name="author" content="Marcel Eichner" />
+		<meta name="copyright" content="© 2009 Marcel Eichner // Ephigenia" />
+		<meta name="contact" content="love@ephigenia.de" />
+		<style type="text/css">
+		
+		/* general styles, can be ignored */
+		body {
+			font-family: Georgia, 'Times New Roman', Arial, Verdana;
+			font-size: 100.01%;
+			line-height: 1.5em;
+			margin: 0px;
+			padding: 0px;
+			background-color: #F4F4F4;
+		}
+		#app {
+			-webkit-box-shadow: #CDCDCD 0px 0px 35px;
+			-moz-box-shadow: 0px 0px 35px #CDCDCD;
+			-khtml-box-shadow: 0px 0px 35px #CDCDCD;
+			width: 620px;
+			margin: 0px auto;
+			background-color: #ffffff;
+			padding: 10px 20px;
+		}
+		a {
+			color: #21759B;
+		}
+		h1 {
+			line-height: 1.2em;
+			border-bottom: 3px solid #323232;
+		}
+		h3 {
+			margin: 1em 0em 0.2em 0em;
+		}
+		p {
+			margin: 0em 0em 0.2em 0em;
+			padding: 0px;
+		}
+		code {
+			background-color: #FFFBDF;
+			padding: 8px 5px;
+			border: 1px solid #A99862;
+			display: block;
+			overflow: auto;
+			white-space:pre;
+			margin: 0em 0em 1em 0em;
+		}
+		.faded, .faded a {
+			color: #B2B2B2 !important;
+		}
+		
+		#news li, #news{
+			list-style-type: none;
+			margin: 0px;
+			padding: 0px;
+		}
+		#news li .time {
+			font-weight: bold;
+			display: block;
+		}
+
+		
+		/* slideshow styles */
+		.slideShow ul, .slideShow li {
+			list-style-type: none;
+			margin: 0px;
+			padding: 0px;
+		}
+		.slideShow {
+			padding: 10px; border: 1px solid #B3B3B3; display: table;
+			clear: both;
+			margin-bottom: 10px;
+		}
+		.slideShow .navigation {
+			margin-top: 10px;
+			clear: left;
+			display: block;
+		}
+		.slideShow .navigation li {
+			display: inline;
+		}
+		.slideShow .navigation a {
+			background-color: #B3B3B3;
+			margin: 0px 2px 0px 0px;
+			padding: 3px 8px;
+			color: #232323;
+			display: inline-block;
+			text-decoration: none;
+			font-size: 0.8em;
+		}
+		.slideShow ul.topNavigation {
+			margin: 0px 0px 40px 0px;
+		}
+		.slideShow .navigation a:hover, .slideShow .navigation a.selected {
+			background-color: #929292;
+			color: #000000;
+		}
+		
+		/** slides with more than an image in it **/
+		.slide img {
+			position: absolute;
+		}
+		.slide h1 {
+			position: absolute;
+			background-color: #ffffff;
+			left: 0px;
+			top: 0px;
+		}
+		
+		/** slides with text over images **/
+		.slide p {
+			margin: 1em;
+			position: absolute;
+			background-color: #000;
+			color: #fff;
+			z-index: 1;
+			padding: 0.2em 0.8em;
+		}
+		.slide p a {
+			color: #fff;
+		}
+		
+		/** slideshow with images in navigation **/
+		.navigation.white a, .navigation.white li {
+			background-color: #ffffff;
+		}
+		.navigation.white a {
+			border: 1px solid #ffffff;
+			padding: 0px;
+			line-height: 0.8em;
+		}
+		.navigation.white a:hover, .navigation.white a.selected {
+			background-color: #ffffff;
+			border: 1px solid #999;
+		}
+		
+		</style>
+	</head>
+	<body>
+		<div id="app">
+				
+				<h1>jQuery.slideShow({});</h1>
+				<p>
+					This is a very simple and very easy to use slideshow plugin for jquery.<br />
+					It will automatically create a slideshow with navigation out of your image list.
+					The plugin also provides different callbacks and options that let you customize
+					the way the slideShow react on mouse rollovers, clicks or slideChanges.<br />
+					<br />
+					If you downloaded this file with the sources you should visit the
+					<a href="http://code.marceleichner.de/project/jquery.slideShow/" rel="external">plugin’s homepage</a>.<br />
+					<br />
+					The script is licensed under <a href="http://www.opensource.org/licenses/mit-license.php" rel="external">MIT License</a> and you can use it for free!<br />
+					All Images used are taken from the plugin’s author <a href="http://www.marceleichner.de/illustration/">Marcel Eichner</a>.
+				</p>
+				
+				<h2>News</h2>
+				<ul id="news">
+					<li>
+						<span class="time">2010-04-06</span>
+						Thanks to the people that pointed me at some bugs that are fixed now. One was in this Page example javascript code and an other
+						one was in the slideshow when clicking on the numbered navigation. Both fixed now. Please download the latest release.
+					</li>
+					<li>
+						<span class="time">2010-02-20</span>
+						I’ve tested jquery.slideShow with the new <a href="http://jquery.com/" title="Official jQuery Website">jQuery 1.4.2</a> and it still works!<br />
+						I also added a new example that shows how to show text on slides.
+					</li>
+				</ul>
+				
+				<h2>Download</h2>
+				<a href="../../download/jquerySlideShow/jquery.slideShow.2010-04-06.zip">jquery.slideShow.2010-04-06.zip</a> (<a href="changelog.txt">changelog</a>)
+				<span class="faded">
+					<h3>Older versions</h3>
+					<a href="../../download/jquerySlideShow/jquery.slideShow.2009-11-25.zip">jquery.slideShow.2009-11-25.zip</a><br />
+					<a href="../../download/jquerySlideShow/jquery.slideShow.2009-10-27.zip">jquery.slideShow.2009-10-27.zip</a><br />
+					<a href="../../download/jquerySlideShow/jquery.slideShow.2009-07-20.zip">jquery.slideShow.2009-07-20.zip</a><br />
+					<a href="../../download/jquerySlideShow/jquery.slideShow.2009-07-02.zip">jquery.slideShow.2009-07-02.zip</a>
+				</span>
+				
+				<h2>Features</h2>
+				<ul>
+					<li>auto slideshow with repeat and a lot of options</li>
+					<li>callback for slide changing (gotoSlide) and slide Clicks (onSlideClick)</li>
+					<li>different option variables to configure</li>
+					<li>change of slide through clicking numbers, next, prev etc and mouse movement over the slides</li>
+					<li>text over images possible</li>
+					<li>Random slideshow</li>
+					<li>start/stop with scripting</li>
+				</ul>
+
+				<h2>Examples</h2>
+				
+				<h3>Websites that use it</h3>
+				<p>
+					Some websites, that allready use this plugin. If you also created a slideshow on your website, write me an email
+					and I’ll link to the page: <a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#58;&#x6c;&#x6f;&#x76;&#x65;&#x40;&#x65;&#x70;&#104;&#x69;&#103;&#101;&#x6e;&#x69;&#x61;&#x2e;&#x64;&#x65;?subject=jquery.slideShow">&#x6c;&#x6f;&#x76;&#x65;&#x40;&#x65;&#x70;&#104;&#x69;&#103;&#101;&#x6e;&#x69;&#x61;&#x2e;&#x64;&#x65;</a>
+				</p>
+				<ul>
+					<li><a href="http://www.10hoch16.de" title="Portfolio mit Arbeiten des berliner Designstudios 10 hoch 16." rel="external">10hoch16.de</a></li>
+					<li><a href="http://www.horrorblog.org" title="Horrorblog.org - Das Blog für Horror- und Fantasy-Film Nachrichten" rel="external">Horrorblog.org</a></li>
+					<li><a href="http://www.the-weinmeister.com/" title="The Weinmeister Hotel Berlin" rel="external">The Weinmeister</a></li>
+					<li><a href="http://www.designhotel-elephant.com/" title="Elephant Design Hotel Prague" rel="external">Designhotel Elephant</a></li>
+					<li><a href="http://jefferson.marceleichner.de/images/slideshow/" title="Jefferson" rel="external">jefferson.marceleichner.de</a></li>
+				</ul>
+
+				<h3>Simple Slideshow</h3>
+				<p>
+					This slideshow does nothing than change the images every 3 seconds
+					with a soft fade. See the next examples for more features.
+				</p>
+				<code class="html">$(document).ready() {
+	$('.mySlideShow').slideShow();
+}</code>
+				<!-- First Slideshow -->
+				<div class="simpleSlideShow slideShow">
+					<ul class="slides">
+						<li class="slide"><img src="img/1.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/2.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/3.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/4.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/5.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/6.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/7.jpg" border="0" alt="" /></li>
+					</ul>
+				</div>
+				
+				<!-- First Slideshow -->
+				<h3>Text over images</h3>
+				<p>
+					This slideshow example shows how to set up text on every slide. The
+					p-Tag is positioned absolute and has an higher z-index as the image slides.
+				</p>
+				<div class="simpleSlideShow slideShow">
+					<ul class="slides">
+						<li class="slide">
+							<p>An example description text</p>
+							<img src="img/1.jpg" border="0" alt="" />
+						</li>
+						<li class="slide">
+							<p>There can also be links in the text <a href="http://www.marceleichner.de" title="Go to the Plugin Author’s Website">www.marceleichner.de</a></p>
+							<img src="img/2.jpg" border="0" alt="" />
+						</li>
+						<li class="slide">
+							<p>Even line-brakes in the Text<br />are displayed!</p>
+							<img src="img/3.jpg" border="0" alt="" />
+						</li>
+						<li class="slide">
+							<p>The next image has no description text on it</p>
+							<img src="img/4.jpg" border="0" alt="" />
+						</li>
+						<li class="slide">
+							<img src="img/5.jpg" border="0" alt="" />
+						</li>
+						<li class="slide">
+							<p>Some other description text Example.</p>
+							<img src="img/6.jpg" border="0" alt="" />
+						</li>
+						<li class="slide">
+							<p>Lorem ipsum</p>
+							<img src="img/7.jpg" border="0" alt="" />
+						</li>
+					</ul>
+				</div>
+				
+				<!-- Second Slideshow -->
+				<h3>Mouse-Over-Interaction</h3>
+				<p>
+					Give the user the possibility to change the image with his mouse
+					pointer by setting hoverNavigation to true. This example shows the effect.
+					Move your mouse over the image to change it.
+				</p>
+				<code>$('.useMouseSlideShow').slideShow({
+	hoverNavigation: true, // use mouse for navigation
+	interval: false // disable auto-slideshow
+});</code>
+				<div class="useMouseSlideShow slideShow">
+					<ul class="slides">
+						<li class="slide"><img src="img/1.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/2.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/3.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/4.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/5.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/6.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/7.jpg" border="0" alt="" /></li>
+					</ul>
+					<ul class="navigation">
+						<li><a href="javascript:void(0);" class="page">1</a></li>
+						<li><a href="javascript:void(0);" class="page">2</a></li>
+						<li><a href="javascript:void(0);" class="page">3</a></li>
+						<li><a href="javascript:void(0);" class="page">4</a></li>
+						<li><a href="javascript:void(0);" class="page">5</a></li>
+						<li><a href="javascript:void(0);" class="page">6</a></li>
+						<li><a href="javascript:void(0);" class="page">7</a></li>
+					</ul>
+				</div>
+				
+				<!-- Slideshow using images as navigation -->
+				<h3>Image Navigation</h3>
+				<p>
+					This example illustrates how to replace the navigation links with images and keep the
+					slideshow working. See the sourcecode for further info.<br />
+					The better way to have custom images in your navigation is to set background images
+					for each navigation point by using css classes.<br />
+				</p>
+				<div class="imageNavigation slideShow">
+					<ul class="slides">
+						<li class="slide"><img src="img/1.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/2.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/3.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/4.jpg" border="0" alt="" /></li>
+					</ul>
+					<ul class="navigation white">
+						<li><a href="javascript:void(0);" class="prev"><img src="img/p_01.gif" border="0" alt="" /></a></li>
+						<li><a href="javascript:void(0);" class="page"><img src="img/p_02.gif" border="0" alt="" /></a></li>
+						<li><a href="javascript:void(0);" class="page"><img src="img/p_03.gif" border="0" alt="" /></a></li>
+						<li><a href="javascript:void(0);" class="page"><img src="img/p_04.gif" border="0" alt="" /></a></li>
+						<li><a href="javascript:void(0);" class="page"><img src="img/p_05.gif" border="0" alt="" /></a></li>
+						<li><a href="javascript:void(0);" class="next"><img src="img/p_07.gif" border="0" alt="" /></a></li>
+					</ul>
+				</div>
+				
+				<!-- Slideshow with navigation on top -->
+				<h3>Navigation Position</h3>
+				<p>
+					You easily can move the navigation to the top of the slideshow by changing the
+					order of the ul tags.
+				</p>
+				<div class="slideShow slideShowTopNavi">
+					<ul class="navigation topNavigation">
+						<li><a href="javascript:void(0);" class="page">1</a></li>
+						<li><a href="javascript:void(0);" class="page">2</a></li>
+						<li><a href="javascript:void(0);" class="page">3</a></li>
+						<li><a href="javascript:void(0);" class="page">4</a></li>
+					</ul>
+					<ul class="slides">
+						<li class="slide"><img src="img/1.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/2.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/3.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/4.jpg" border="0" alt="" /></li>
+					</ul>
+				</div>
+				
+				
+				<!-- Random start -->
+				<h3>Random start</h3>
+				<p>
+					Create a slideshow that starts from a random selected image					
+				</p>
+				<code>$('.randomSlideShow').slideShow({
+	start: 'random'
+});</code>
+				<div class="randomSlideShow slideShow">
+					<ul class="slides">
+						<li class="slide"><img src="img/1.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/2.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/3.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/4.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/5.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/6.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/7.jpg" border="0" alt="" /></li>
+					</ul>
+					<ul class="navigation">
+						<li><a href="javascript:void(0);" class="page">1</a></li>
+						<li><a href="javascript:void(0);" class="page">2</a></li>
+						<li><a href="javascript:void(0);" class="page">3</a></li>
+						<li><a href="javascript:void(0);" class="page">4</a></li>
+						<li><a href="javascript:void(0);" class="page">5</a></li>
+						<li><a href="javascript:void(0);" class="page">6</a></li>
+						<li><a href="javascript:void(0);" class="page">7</a></li>
+					</ul>
+				</div>
+				
+				<!-- Play/Pause -->
+				<h3>Play/Pause/Stop Example</h3>
+				<p>
+					This example shows a slideshow with prev/next and a pause/play
+					button that also changes it’s label when pressed.
+				</p>
+				<code>var slideShow = $('.playPauseExample').slideShow({
+	interval: 0.7
+});
+// now add logic to play/pause button
+$('.playPauseExample a.togglePlayback').click(function() {
+	if (slideShow.isPlaying()) {
+		$(this).html('play');
+	} else {
+		$(this).html('stop');
+	}
+	slideShow.togglePlayback();
+});
+				</code>
+				<div class="playPauseExample slideShow">
+					<ul class="slides">
+						<li class="slide"><img src="img/1.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/2.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/3.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/4.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/5.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/6.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/7.jpg" border="0" alt="" /></li>
+					</ul>
+					<ul class="navigation">
+						<li><a href="javascript:void(0);" class="first">first</a></li>
+						<li><a href="javascript:void(0);" class="prev">prev</a></li>
+						<li><a href="javascript:void(0);" class="next">next</a></li>
+						<li><a href="javascript:void(0);" class="last">last</a></li>
+						<li><a href="javascript:void(0);" class="togglePlayback">stop</a></li>
+					</ul>
+				</div>
+				
+				<!-- Callback Slideshow -->
+				<h3>Callback Example</h3>
+				<p>
+					This example demonstrates how to use the <q>gotoSlide</q> and <q>slideClick</q> callback.<br />
+					The <q>gotoSlide</q> callback echoes the current slide index in a div under the slideshow and
+					the <q>slideClick</q> callback let you navigate back and forth by clicking a slide.
+				</p>
+				<code>$('.callbackSlideShow').slideShow({
+	interval: 5,
+	slideClick: function(slideShow) {
+		if (slideShow.mouse.x > slideShow.options.slideSize.width / 2) {
+			slideShow.next();
+		} else {
+			slideShow.previous();
+		}
+	},
+	gotoSlide: function(slideShow, index) {
+		$('.callBackSlideShowLog').html('goto slide index: ' + index);
+	}
+});</code>
+				<div class="callbackSlideShow slideShow">
+					<ul class="slides">
+						<li class="slide"><img src="img/1.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/2.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/3.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/4.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/5.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/6.jpg" border="0" alt="" /></li>
+						<li class="slide"><img src="img/7.jpg" border="0" alt="" /></li>
+					</ul>
+					<ul class="navigation">
+						<li><a href="javascript:void(0);" class="first">first</a></li>
+						<li><a href="javascript:void(0);" class="prev">prev</a></li>
+						<li><a href="javascript:void(0);" class="page">1</a></li>
+						<li><a href="javascript:void(0);" class="page">2</a></li>
+						<li><a href="javascript:void(0);" class="page">3</a></li>
+						<li><a href="javascript:void(0);" class="page">4</a></li>
+						<li><a href="javascript:void(0);" class="page">5</a></li>
+						<li><a href="javascript:void(0);" class="page">6</a></li>
+						<li><a href="javascript:void(0);" class="page">7</a></li>
+						<li><a href="javascript:void(0);" class="next">next</a></li>
+						<li><a href="javascript:void(0);" class="last">last</a></li>
+					</ul>
+				</div>
+				<div class="callBackSlideShowLog"></div>
+				
+				<!-- Javascripts needed for jquery.slideShow -->
+				<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+				
+				<!-- jquery.Slideshow file -->
+				<script type="text/javascript" src="../src/jquery.slideshow.js"></script>
+				
+				<!-- Javascripts for examples, can be deleted -->
+				<script type="text/javascript">
+					$(document).ready(function() {
+						// simplest example
+						$('.simpleSlideShow, .slideShowTopNavi').slideShow({
+							interval: 3
+						});
+						// slideshow with mouse hover
+						$('.useMouseSlideShow').slideShow({
+							hoverNavigation: true,
+							interval: false
+						});
+						// slideshow with images
+						$('.imageNavigation').slideShow({
+							interval: 3
+						});
+						// random slideshow
+						$('.randomSlideShow').slideShow({
+							interval: 3,
+							start: 'random'
+						});
+						
+						// slideshow with play/pause
+						var slideShow = $('.playPauseExample').slideShow({
+							interval: 0.7
+						});
+						// now add logic to play/pause button
+						$('.playPauseExample a.togglePlayback').click(function() {
+							if (slideShow.isPlaying()) {
+								$(this).html('play');
+							} else {
+								$(this).html('stop');
+							}
+							slideShow.togglePlayback();
+						});
+						
+						// slideshow with callback
+						$('.callbackSlideShow').slideShow({
+							interval: 3,
+							slideClick: function(slideShow) {
+								if (slideShow.mouse.x > slideShow.options.slideSize.width / 2) {
+									slideShow.next();
+								} else {
+									slideShow.previous();
+								}
+							},
+							gotoSlide: function(slideShow, index) {
+								$('.callBackSlideShowLog').html('goto slide index: ' + index);
+							}
+						});
+					});
+				</script>
+		</div>
+	</body>
+</html>
