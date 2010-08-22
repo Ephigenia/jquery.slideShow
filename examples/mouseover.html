@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<head>
+	<title>jQuery slideshow plugin Examples // Marcel Eichner // Ephigenia</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="jQuery.slideshow, slideshow Plugin, jquery slideshow plugin, simple plugin, easy slideshow, slideshow callback, jquery gallery, javascript slideshow" />
+	<meta name="robots" content="index, follow" />
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+	<link href="css/slideshow.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="../src/jquery.slideshow.js"></script>
+</head>
+<body>
+	<div id="app">
+		<h1>jQuery.slideShow</h1>
+		<h2>Mouse-Over-Interaction</h2>
+		<p>
+			Give the user the possibility to change the image with his mouse
+			pointer by setting hoverNavigation to true. This example shows the effect.
+			Move your mouse over the image to change it.
+		</p>
+		<code>$('.useMouseSlideShow').slideShow({
+	hoverNavigation: true, // use mouse for navigation
+	interval: false // disable auto-slideshow
+});</code>
+		<div class="useMouseSlideShow slideShow">
+			<ul class="slides">
+				<li class="slide"><img src="img/1.jpg" border="0" alt="" /></li>
+				<li class="slide"><img src="img/2.jpg" border="0" alt="" /></li>
+				<li class="slide"><img src="img/3.jpg" border="0" alt="" /></li>
+				<li class="slide"><img src="img/4.jpg" border="0" alt="" /></li>
+				<li class="slide"><img src="img/5.jpg" border="0" alt="" /></li>
+				<li class="slide"><img src="img/6.jpg" border="0" alt="" /></li>
+				<li class="slide"><img src="img/7.jpg" border="0" alt="" /></li>
+			</ul>
+			<ul class="navigation">
+				<li><a href="javascript:void(0);" class="page">1</a></li>
+				<li><a href="javascript:void(0);" class="page">2</a></li>
+				<li><a href="javascript:void(0);" class="page">3</a></li>
+				<li><a href="javascript:void(0);" class="page">4</a></li>
+				<li><a href="javascript:void(0);" class="page">5</a></li>
+				<li><a href="javascript:void(0);" class="page">6</a></li>
+				<li><a href="javascript:void(0);" class="page">7</a></li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				// slideshow with mouse hover
+				$('.useMouseSlideShow').slideShow({
+					hoverNavigation: true,
+					interval: false
+				});
+			});
+		</script>
+	</div>
+</body>

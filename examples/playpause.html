@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<head>
+	<title>jQuery slideshow plugin Examples // Marcel Eichner // Ephigenia</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="jQuery.slideshow, slideshow Plugin, jquery slideshow plugin, simple plugin, easy slideshow, slideshow callback, jquery gallery, javascript slideshow" />
+	<meta name="robots" content="index, follow" />
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+	<link href="css/slideshow.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="../src/jquery.slideshow.js"></script>
+</head>
+<body>
+	<div id="app">
+		<h1>jQuery.slideShow</h1>
+		<h2>Play/Pause/Stop Example</h2>
+		<p>
+			This example shows a slideshow with prev/next and a pause/play
+			button that also changes it’s label when pressed.
+		</p>
+		<code>var slideShow = $('.playPauseExample').slideShow({
+	interval: 0.7
+});
+// now add logic to play/pause button
+$('.playPauseExample a.togglePlayback').click(function() {
+	if (slideShow.isPlaying()) {
+		$(this).html('play');
+	} else {
+		$(this).html('stop');
+	}
+	slideShow.togglePlayback();
+});</code>
+		<div class="playPauseExample slideShow">
+			<ul class="slides">
+				<li class="slide"><img src="img/1.jpg" border="0" alt="" /></li>
+				<li class="slide"><img src="img/2.jpg" border="0" alt="" /></li>
+				<li class="slide"><img src="img/3.jpg" border="0" alt="" /></li>
+				<li class="slide"><img src="img/4.jpg" border="0" alt="" /></li>
+				<li class="slide"><img src="img/5.jpg" border="0" alt="" /></li>
+				<li class="slide"><img src="img/6.jpg" border="0" alt="" /></li>
+				<li class="slide"><img src="img/7.jpg" border="0" alt="" /></li>
+			</ul>
+			<ul class="navigation">
+				<li><a href="javascript:void(0);" class="first">first</a></li>
+				<li><a href="javascript:void(0);" class="prev">prev</a></li>
+				<li><a href="javascript:void(0);" class="next">next</a></li>
+				<li><a href="javascript:void(0);" class="last">last</a></li>
+				<li><a href="javascript:void(0);" class="togglePlayback">stop</a></li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var slideShow = $('.playPauseExample').slideShow({
+					interval: 0.7
+				});
+				// now add logic to play/pause button
+				$('.playPauseExample a.togglePlayback').click(function() {
+					if (slideShow.isPlaying()) {
+						$(this).html('play');
+					} else {
+						$(this).html('stop');
+					}
+					slideShow.togglePlayback();
+				});
+			});
+		</script>
+	</div>
+</body>

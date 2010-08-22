@@ -1,0 +1,73 @@
+/* slideshow styles */
+.slideShow ul, .slideShow li {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+.slideShow {
+	padding: 10px; border: 1px solid #B3B3B3; display: table;
+	clear: both;
+	margin-bottom: 10px;
+}
+.slideShow .navigation {
+	margin-top: 10px;
+	clear: left;
+	display: block;
+}
+.slideShow .navigation li {
+	display: inline;
+}
+.slideShow .navigation a {
+	background-color: #B3B3B3;
+	margin: 0px 2px 0px 0px;
+	padding: 3px 8px;
+	color: #232323;
+	display: inline-block;
+	text-decoration: none;
+	font-size: 0.8em;
+}
+.slideShow ul.topNavigation {
+	margin: 0px 0px 40px 0px;
+}
+.slideShow .navigation a:hover, .slideShow .navigation a.selected {
+	background-color: #929292;
+	color: #000000;
+}
+
+/** slides with more than an image in it **/
+.slide img {
+	position: absolute;
+}
+.slide h1 {
+	position: absolute;
+	background-color: #ffffff;
+	left: 0px;
+	top: 0px;
+}
+
+/** slides with text over images **/
+.slide p {
+	margin: 1em;
+	position: absolute;
+	background-color: #000;
+	color: #fff;
+	z-index: 1;
+	padding: 0.2em 0.8em;
+}
+.slide p a {
+	color: #fff;
+}
+
+/** slideshow with images in navigation **/
+.navigation.white a, .navigation.white li {
+	background-color: #ffffff;
+}
+.navigation.white a {
+	border: 1px solid #ffffff;
+	padding: 0px;
+	line-height: 0.8em;
+}
+.navigation.white a:hover, .navigation.white a.selected {
+	background-color: #ffffff;
+	border: 1px solid #999;
+}

@@ -4,6 +4,36 @@ jQuery.slideShow, Readme Fil
 
 # DESCRIPTION
 
+This is a very simple and very easy to use slideshow plugin for jquery.
+It will automatically create a slideshow with navigation out of your image list.
+The plugin also provides different callbacks and options that let you customize
+the way the slideShow react on mouse rollovers, clicks or slideChanges.
+
+If you downloaded this file with the sources you should visit the
+[plugin’s homepage](http://code.marceleichner.de/project/jquery.slideShow/).
+
+The script is licensed under [MIT License](http://www.opensource.org/licenses/mit-license.php) and you can use it for free!<br />
+All Images used are taken from the plugin’s author [Marcel Eichner](http://www.marceleichner.de/illustration/.
+
+# EXAMPLES
+
+## Websites that use it
+
+* [10hoch16.de](http://www.10hoch16.de)
+* [Horrorblog.org](http://www.horrorblog.org)
+* [The Weinmeister](http://www.the-weinmeister.com/)
+* [Designhotel Elephant](http://www.designhotel-elephant.com/)
+
+# FEATURES
+
+* auto slideshow with repeat and a lot of options
+* callback for slide changing (gotoSlide) and slide Clicks (onSlideClick)
+* different option variables to configure
+* change of slide through clicking numbers, next, prev etc and mouse movement over the slides
+* text over images possible
+* Random slideshow
+* start/stop with scripting
+
 # CHANGELOG
 
 * 2010-08-22
