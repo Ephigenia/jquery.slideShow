@@ -1,6 +1,6 @@
 jQuery.slideShow, Readme Fil
 ==============================================================================
-[Marcel Eichner // Ephigenia](love@ephigenia.de)
+2010-08-22, [Marcel Eichner // Ephigenia](love@ephigenia.de)
 
 # DESCRIPTION
 
@@ -12,12 +12,11 @@ the way the slideShow react on mouse rollovers, clicks or slideChanges.
 If you downloaded this file with the sources you should visit the
 [plugin’s homepage](http://code.marceleichner.de/project/jquery.slideShow/).
 
-The script is licensed under [MIT License](http://www.opensource.org/licenses/mit-license.php) and you can use it for free!<br />
-All Images used are taken from the plugin’s author [Marcel Eichner](http://www.marceleichner.de/illustration/.
+The script is licensed under [MIT License](http://www.opensource.org/licenses/mit-license.php)
+and you can use it for free!
+All Images used are taken from the plugin’s author [Marcel Eichner](http://www.marceleichner.de/illustration/).
 
 # EXAMPLES
-
-## Websites that use it
 
 * [10hoch16.de](http://www.10hoch16.de)
 * [Horrorblog.org](http://www.horrorblog.org)
@@ -34,11 +33,16 @@ All Images used are taken from the plugin’s author [Marcel Eichner](http://www
 * Random slideshow
 * start/stop with scripting
 
+# UPDATES/FEEDBACK & BUGS
+
+If you found a bug, check out for updates or anything else on this project
+please visit the [jquery.slideShow Project Page on Github](http://github.com/Ephigenia/jquery.slideShow).
+
 # CHANGELOG
 
 * 2010-08-22
 	* Created repository on [Github](Github)
-	* Fixed braked bug
+	* Split examples into single files
 	
 * 2010-04-06
 	* fixed bug in navigation click with numbers when slideshow skipped to
