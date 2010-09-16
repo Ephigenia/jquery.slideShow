@@ -83,7 +83,7 @@
 				}
 				// don't set size of slides and slide container if not needed
 				if (this.options.slideSize != 'none' && this.options.slideSize != false) {
-					this.find('.slides, .slide').css({
+					this.find('.slides').css({
 						height: this.options.slideSize.height + 'px',
 						width: this.options.slideSize.width + 'px',
 						overflow: 'hidden'
@@ -92,7 +92,7 @@
 			}
 			
 			// set slides to be positioned absolute
-			this.find('.slide').css('position','absolute');
+			this.find('.slide').css('position', 'absolute');
 			// hide slides if not hidden allready
 			this.find('.slide:not(:eq(' + this.current + '))').hide();
 			
@@ -105,7 +105,7 @@
 			
 			// init pagínation buttons if available
 			this.find('.navigation .page:eq(' + this.current + ')').addClass('selected');
-			this.find('.page').click(function() {
+			this.find('.page').click(function(e) {
 				if (!(slideShow = $(this).data('slideShow'))) {
 					var slideShow = this;
 				}
@@ -114,6 +114,7 @@
 				if (!(index = parseInt($(this).html()-1))) {
 					var index = $(this).parents('.navigation').find('.page').index($(this));
 				}
+				e.preventDefault();
 				slideShow.gotoSlide(index);
 			});
 			
@@ -257,7 +258,9 @@
 				if (!(slideShow = $(this).data('slideShow'))) {
 					var slideShow = this;
 				}
-				slideShow.elm.find('.navigation .page:not(:eq(' + slideShow.current + '))').removeClass('selected');
+				if (slideShow.current >= 0) {
+					slideShow.elm.find('.navigation .page:not(:eq(' + slideShow.current + '))').removeClass('selected');
+				}
 				$(this).addClass('selected');
 			}
 			// get slideshow
@@ -286,6 +289,11 @@
 					}
 				}
 			}
+			// alter height of slides to new slide height
+			this.find('.slides').animate({
+				height: newSlide.height()
+			});
+			
 			this.last = this.current;
 			this.current = index;
 			return this;

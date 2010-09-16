@@ -1,20 +1,18 @@
-jQuery.slideShow, Readme Fil
+jQuery.slideShow, Readme File:
 ==============================================================================
 2010-08-22, [Marcel Eichner // Ephigenia](love@ephigenia.de)
 
 # DESCRIPTION
 
 This is a very simple and very easy to use slideshow plugin for jquery.
-It will automatically create a slideshow with navigation out of your image list.
-The plugin also provides different callbacks and options that let you customize
-the way the slideShow react on mouse rollovers, clicks or slideChanges.
+It will automatically create a slideshow with navigation out of your image list. The plugin also provides different callbacks and options that let you customize the way the slideShow react on mouse rollovers, clicks or slideChanges.
 
 If you downloaded this file with the sources you should visit the
-[plugin’s homepage](http://code.marceleichner.de/project/jquery.slideShow/).
+[plugin’s homepage](http://code.marceleichner.de/project/jquery.slideShow/)
+and the [project on github](http://github.com/Ephigenia/jquery.slideShow).
 
 The script is licensed under [MIT License](http://www.opensource.org/licenses/mit-license.php)
-and you can use it for free!
-All Images used are taken from the plugin’s author [Marcel Eichner](http://www.marceleichner.de/illustration/).
+and you can use it for free! All Images used are taken from the plugin’s author [Marcel Eichner](http://www.marceleichner.de/illustration/).
 
 # EXAMPLES
 
@@ -36,10 +34,20 @@ All Images used are taken from the plugin’s author [Marcel Eichner](http://www
 # UPDATES/FEEDBACK & BUGS
 
 If you found a bug, check out for updates or anything else on this project
-please visit the [jquery.slideShow Project Page on Github](http://github.com/Ephigenia/jquery.slideShow).
+please visit the [jquery.slideShow Project Page on Github](http://github.com/Ephigenia/jquery.slideShow) and post it there under
+"issues".
 
 # CHANGELOG
 
+* 2010-09-16
+	* Added feature where the height of the slideshow is dynamically changed
+	  if the slides change their height. That is especially helpfull for
+	  slides with alt image texts
+	* Moved example display to the top and example description and source
+	  to bottom on every example source
+	* Added example for thumbnail navigation
+	* Fixed bug where first selected item gets deselected on init
+	
 * 2010-08-22
 	* Created repository on [Github](Github)
 	* Split examples into single files

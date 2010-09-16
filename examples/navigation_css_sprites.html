@@ -5,49 +5,39 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="jQuery.slideshow, slideshow Plugin, jquery slideshow plugin, simple plugin, easy slideshow, slideshow callback, jquery gallery, javascript slideshow" />
 	<meta name="robots" content="index, follow" />
-	<meta http-equiv="imagetoolbar" content="no" />
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="generator" content="Marcel Eichner" />
-	<meta name="author" content="Marcel Eichner" />
-	<meta name="copyright" content="© 2009 Marcel Eichner // Ephigenia" />
-	<meta name="contact" content="love@ephigenia.de" />
 	<link href="css/main.css" rel="stylesheet" type="text/css" />
 	<link href="css/slideshow.css" rel="stylesheet" type="text/css" />
-	<!-- Javascripts needed for jquery.slideShow -->
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
-	<!-- jquery.Slideshow file -->
 	<script type="text/javascript" src="../src/jquery.slideshow.js"></script>
 </head>
 <body>
 	<div id="app">
-		<!-- Slideshow using images as navigation -->
-		<h3>Image Navigation</h3>
-		<p>
-			This example illustrates how to replace the navigation links with images and keep the
-			slideshow working. See the sourcecode for further info.<br />
-			The better way to have custom images in your navigation is to set background images
-			for each navigation point by using css classes.<br />
-		</p>
-		<div class="imageNavigation slideShow">
-			<ul class="slides">
+		<h1>jQuery.slideShow</h1>
+		<h2>Image Navigation</h2>
+		<div class="slideShow">
+			<ol class="slides">
 				<li class="slide"><img src="img/1.jpg" border="0" alt="" /></li>
 				<li class="slide"><img src="img/2.jpg" border="0" alt="" /></li>
 				<li class="slide"><img src="img/3.jpg" border="0" alt="" /></li>
 				<li class="slide"><img src="img/4.jpg" border="0" alt="" /></li>
-			</ul>
-			<ul class="navigation white">
+			</ol>
+			<ol class="navigation white">
 				<li><a href="javascript:void(0);" class="prev"><img src="img/p_01.gif" border="0" alt="" /></a></li>
 				<li><a href="javascript:void(0);" class="page"><img src="img/p_02.gif" border="0" alt="" /></a></li>
 				<li><a href="javascript:void(0);" class="page"><img src="img/p_03.gif" border="0" alt="" /></a></li>
 				<li><a href="javascript:void(0);" class="page"><img src="img/p_04.gif" border="0" alt="" /></a></li>
 				<li><a href="javascript:void(0);" class="page"><img src="img/p_05.gif" border="0" alt="" /></a></li>
 				<li><a href="javascript:void(0);" class="next"><img src="img/p_07.gif" border="0" alt="" /></a></li>
-			</ul>
+			</ol>
 		</div>
+		<p>
+			Example showing how to use a single graphic as css sprite in the
+			background of each navigation element. This example is basically
+			only css styles and no javascript mambo jambo.
+		</p>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				// slideshow with images
-				$('.imageNavigation').slideShow({
+				$('.slideShow').slideShow({
 					interval: 3
 				});
 			});

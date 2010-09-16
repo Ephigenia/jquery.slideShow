@@ -14,23 +14,7 @@
 	<div id="app">
 		<h1>jQuery.slideShow</h1>
 		<h2>Play/Pause/Stop Example</h2>
-		<p>
-			This example shows a slideshow with prev/next and a pause/play
-			button that also changes it’s label when pressed.
-		</p>
-		<code>var slideShow = $('.playPauseExample').slideShow({
-	interval: 0.7
-});
-// now add logic to play/pause button
-$('.playPauseExample a.togglePlayback').click(function() {
-	if (slideShow.isPlaying()) {
-		$(this).html('play');
-	} else {
-		$(this).html('stop');
-	}
-	slideShow.togglePlayback();
-});</code>
-		<div class="playPauseExample slideShow">
+		<div class="slideShow">
 			<ul class="slides">
 				<li class="slide"><img src="img/1.jpg" border="0" alt="" /></li>
 				<li class="slide"><img src="img/2.jpg" border="0" alt="" /></li>
@@ -48,13 +32,29 @@ $('.playPauseExample a.togglePlayback').click(function() {
 				<li><a href="javascript:void(0);" class="togglePlayback">stop</a></li>
 			</ul>
 		</div>
+		<p>
+			This example shows a slideshow with prev/next and a pause/play
+			button that also changes it’s label when pressed.
+		</p>
+		<code>var slideShow = $('.playPauseExample').slideShow({
+	interval: 0.7
+});
+// now add logic to play/pause button
+$('.playPauseExample a.togglePlayback').click(function() {
+	if (slideShow.isPlaying()) {
+		$(this).html('play');
+	} else {
+		$(this).html('stop');
+	}
+	slideShow.togglePlayback();
+});</code>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				var slideShow = $('.playPauseExample').slideShow({
+				var slideShow = $('.slideShow').slideShow({
 					interval: 0.7
 				});
 				// now add logic to play/pause button
-				$('.playPauseExample a.togglePlayback').click(function() {
+				$('.slideShow a.togglePlayback').click(function() {
 					if (slideShow.isPlaying()) {
 						$(this).html('play');
 					} else {

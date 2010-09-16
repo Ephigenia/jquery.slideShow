@@ -14,13 +14,7 @@
 	<div id="app">
 		<h1>jQuery.slideShow</h1>
 		<h2>Random start</h2>
-		<p>
-			Create a slideshow that starts from a random selected image					
-		</p>
-		<code>$('.randomSlideShow').slideShow({
-	start: 'random'
-});</code>
-		<div class="randomSlideShow slideShow">
+		<div class="slideShow">
 			<ul class="slides">
 				<li class="slide"><img src="img/1.jpg" border="0" alt="" /></li>
 				<li class="slide"><img src="img/2.jpg" border="0" alt="" /></li>
@@ -40,9 +34,15 @@
 				<li><a href="javascript:void(0);" class="page">7</a></li>
 			</ul>
 		</div>
+		<p>
+			Create a slideshow that starts from a random selected image					
+		</p>
+		<code>$('.randomSlideShow').slideShow({
+	start: 'random'
+});</code>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				$('.randomSlideShow').slideShow({
+				$('.slideShow').slideShow({
 					interval: 3,
 					start: 'random'
 				});

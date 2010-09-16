@@ -1,16 +1,23 @@
 /* slideshow styles */
-.slideShow ul, .slideShow li {
+.slideShow ul,
+.slideShow li,
+.slideShow ol {
 	list-style-type: none;
 	margin: 0px;
 	padding: 0px;
+	font-family: Geneva, Arial, Verdana;
 }
 .slideShow {
-	padding: 10px; border: 1px solid #B3B3B3; display: table;
+	padding: 10px;
+	border: 1px solid #B3B3B3;
+	display: table;
 	clear: both;
 	margin-bottom: 10px;
 }
+
+/** navigation **/
 .slideShow .navigation {
-	margin-top: 10px;
+	margin: 5px 0px 0px 0px;
 	clear: left;
 	display: block;
 }
@@ -24,25 +31,37 @@
 	color: #232323;
 	display: inline-block;
 	text-decoration: none;
+	border: 1px solid #fff;
 	font-size: 0.8em;
+	text-shadow: 0px 1px rgba(255,255,255,0.5);
+	text-transform: uppercase;
 }
-.slideShow ul.topNavigation {
-	margin: 0px 0px 40px 0px;
+.slideShow .thumbs a {
+	padding: 0px;
+	overflow: hidden;
+	background-color: transparent;
+	height: 50px;
 }
-.slideShow .navigation a:hover, .slideShow .navigation a.selected {
-	background-color: #929292;
+.slideShow .navigation a:hover,
+.slideShow .navigation a.selected {
+	background-color: #6C6C6C !important;
+	border: 1px solid #6C6C6C;
 	color: #000000;
+}
+.slideShow ol.topNavigation {
+	margin: 0px 0px 10px 0px;
 }
 
 /** slides with more than an image in it **/
-.slide img {
-	position: absolute;
-}
 .slide h1 {
 	position: absolute;
 	background-color: #ffffff;
 	left: 0px;
 	top: 0px;
+}
+
+.slide dl dt {
+	width: 500px;
 }
 
 /** slides with text over images **/
@@ -67,7 +86,8 @@
 	padding: 0px;
 	line-height: 0.8em;
 }
-.navigation.white a:hover, .navigation.white a.selected {
+.navigation.white a:hover,
+.navigation.white a.selected {
 	background-color: #ffffff;
 	border: 1px solid #999;
 }

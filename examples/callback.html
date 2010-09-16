@@ -14,24 +14,6 @@
 	<div id="app">
 		<h1>jQuery.slideShow</h1>
 		<h2>Callback Example</h2>
-		<p>
-			This example demonstrates how to use the <q>gotoSlide</q> and <q>slideClick</q> callback.<br />
-			The <q>gotoSlide</q> callback echoes the current slide index in a div under the slideshow and
-			the <q>slideClick</q> callback let you navigate back and forth by clicking a slide.
-		</p>
-		<code>$('.callbackSlideShow').slideShow({
-	interval: 5,
-	slideClick: function(slideShow) {
-		if (slideShow.mouse.x > slideShow.options.slideSize.width / 2) {
-			slideShow.next();
-		} else {
-			slideShow.previous();
-		}
-	},
-	gotoSlide: function(slideShow, index) {
-		$('.callBackSlideShowLog').html('goto slide index: ' + index);
-	}
-});</code>
 		<div class="callbackSlideShow slideShow">
 			<ul class="slides">
 				<li class="slide"><img src="img/1.jpg" border="0" alt="" /></li>
@@ -56,6 +38,24 @@
 				<li><a href="javascript:void(0);" class="last">last</a></li>
 			</ul>
 		</div>
+		<p>
+			This example demonstrates how to use the <q>gotoSlide</q> and <q>slideClick</q> callback.<br />
+			The <q>gotoSlide</q> callback echoes the current slide index in a div under the slideshow and
+			the <q>slideClick</q> callback let you navigate back and forth by clicking a slide.
+		</p>
+		<code>$('.callbackSlideShow').slideShow({
+	interval: 5,
+	slideClick: function(slideShow) {
+		if (slideShow.mouse.x > slideShow.options.slideSize.width / 2) {
+			slideShow.next();
+		} else {
+			slideShow.previous();
+		}
+	},
+	gotoSlide: function(slideShow, index) {
+		$('.callBackSlideShowLog').html('goto slide index: ' + index);
+	}
+});</code>
 		<div class="callBackSlideShowLog"></div>
 		<script type="text/javascript">
 			$(document).ready(function() {
