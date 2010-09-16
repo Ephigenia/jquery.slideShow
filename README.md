@@ -47,6 +47,7 @@ please visit the [jquery.slideShow Project Page on Github](http://github.com/Eph
 	  to bottom on every example source
 	* Added example for thumbnail navigation
 	* Fixed bug where first selected item gets deselected on init
+	* Slideshow stop stops also in safari
 	
 * 2010-08-22
 	* Created repository on [Github](Github)

@@ -49,7 +49,7 @@
 			gotoSlide: 		false	// slide change callback
 		};
 		this.options = $.extend({}, this.defaults, options);
-		
+
 		// internal vars
 		this.numSlides = this.find('.slide').length;
 		if (this.options.start == 'random' || this.options.start == 'rnd') {
@@ -81,6 +81,7 @@
 						height: this.find('.slide:first img').height()
 					};
 				}
+				
 				// don't set size of slides and slide container if not needed
 				if (this.options.slideSize != 'none' && this.options.slideSize != false) {
 					this.find('.slides').css({
@@ -182,7 +183,7 @@
 			if (!(slideShow = $(this).data('slideShow'))) {
 				var slideShow = this;
 			}
-			return slideShow.interval;
+			return slideShow.options.interval;
 		}
 		// stop/play slideshow automatic 
 		this.togglePlayback = function() {
