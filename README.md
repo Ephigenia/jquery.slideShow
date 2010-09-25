@@ -31,6 +31,28 @@ and you can use it for free! All Images used are taken from the plugin’s autho
 * Random slideshow
 * start/stop with scripting
 
+# USAGE
+
+	$('div.slideShow').slideShow();
+	
+# OPTIONS
+
+* `start` [integer|string, default: `0`], index of slide to start with. Set to
+  `random` or `rnd` to select a random start slide
+* `interval` [integer, default: `3`], seconds to wait before new slide starts
+* `repeat` [boolean, default: `true`], indicates if the slideshow should
+  start new when reached the last slide
+* `transition`  
+	* `mode` [string, default `fade`], transition mode for slide changes
+	* `speed` [integer, default `1000`], speed of transition
+* `slideSize` [array, default `autor`], size of slides to use, default is
+	auto, which will determine the size of the slide automatically
+	* `width` [integer]
+	* `height` [integer]
+* `slideClick` [callback], custom callback called when a slide is clicked
+* `gotoSlide` [callback], custom callback called when a new slide is triggered
+
+
 # UPDATES/FEEDBACK & BUGS
 
 If you found a bug, check out for updates or anything else on this project
@@ -38,6 +60,9 @@ please visit the [jquery.slideShow Project Page on Github](http://github.com/Eph
 "issues".
 
 # CHANGELOG
+
+* 2010-09-25
+	* Added OPTIONS and USAGE part in this file
 
 * 2010-09-16
 	* Added feature where the height of the slideshow is dynamically changed
