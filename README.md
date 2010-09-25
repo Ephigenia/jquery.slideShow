@@ -37,20 +37,27 @@ and you can use it for free! All Images used are taken from the plugin’s autho
 	
 # OPTIONS
 
-* `start` [integer|string, default: `0`], index of slide to start with. Set to
-  `random` or `rnd` to select a random start slide
-* `interval` [integer, default: `3`], seconds to wait before new slide starts
-* `repeat` [boolean, default: `true`], indicates if the slideshow should
-  start new when reached the last slide
+* `start` [integer|string, default: `0`]
+  index of slide to start with. Set to `random` or `rnd` to select a random
+  start slide
+* `interval` [integer, default: `3`]
+  seconds to wait before new slide starts
+* `repeat` [boolean, default: `true`]
+  indicates if the slideshow should start new when reached the last slide
 * `transition`  
-	* `mode` [string, default `fade`], transition mode for slide changes
-	* `speed` [integer, default `1000`], speed of transition
-* `slideSize` [array, default `autor`], size of slides to use, default is
-	auto, which will determine the size of the slide automatically
+	* `mode` [string, default `fade`]
+	  transition mode for slide changes
+	* `speed` [integer, default `1000`]
+	  speed of transition
+* `slideSize` [array, default `auto`]
+    size of slides to use, default is auto, which will determine the size of
+    the slide automatically
 	* `width` [integer]
 	* `height` [integer]
-* `slideClick` [callback], custom callback called when a slide is clicked
-* `gotoSlide` [callback], custom callback called when a new slide is triggered
+* `slideClick` [callback]
+  custom callback called when a slide is clicked
+* `gotoSlide` [callback]
+  custom callback called when a new slide is triggered
 
 
 # UPDATES/FEEDBACK & BUGS
