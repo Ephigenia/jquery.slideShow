@@ -17,9 +17,10 @@ and you can use it for free! All Images used are taken from the plugin’s autho
 # EXAMPLES
 
 * [10hoch16.de](http://www.10hoch16.de)
-* [Horrorblog.org](http://www.horrorblog.org)
 * [The Weinmeister](http://www.the-weinmeister.com/)
 * [Designhotel Elephant](http://www.designhotel-elephant.com/)
+
+Want your site added to the list? Send me a message on github!
 
 # FEATURES
 
@@ -37,26 +38,26 @@ and you can use it for free! All Images used are taken from the plugin’s autho
 	
 # OPTIONS
 
-* `start` [integer|string, default: `0`]
+* `start` [integer|string, default: `0`]  
   index of slide to start with. Set to `random` or `rnd` to select a random
   start slide
-* `interval` [integer, default: `3`]
+* `interval` [integer, default: `3`]  
   seconds to wait before new slide starts
-* `repeat` [boolean, default: `true`]
+* `repeat` [boolean, default: `true`]  
   indicates if the slideshow should start new when reached the last slide
 * `transition`  
-	* `mode` [string, default `fade`]
+	* `mode` [string, default `fade`]  
 	  transition mode for slide changes
-	* `speed` [integer, default `1000`]
+	* `speed` [integer, default `1000`]  
 	  speed of transition
-* `slideSize` [array, default `auto`]
+* `slideSize` [array, default `auto`]  
     size of slides to use, default is auto, which will determine the size of
     the slide automatically
-	* `width` [integer]
-	* `height` [integer]
-* `slideClick` [callback]
+	* `width` [integer]  
+	* `height` [integer]  
+* `slideClick` [callback]  
   custom callback called when a slide is clicked
-* `gotoSlide` [callback]
+* `gotoSlide` [callback]  
   custom callback called when a new slide is triggered
 
 
@@ -99,8 +100,8 @@ please visit the [jquery.slideShow Project Page on Github](http://github.com/Eph
 	* changed format of this changelog to markdown
 	* Random slideshow possible
 
-* 2009-07-20 #
+* 2009-07-20
 	* fixed bug: use of images in navigation, click on .page fixed index
 
-* 2009-07-02 #
+* 2009-07-02
 	* added license informations and minified version of slideshow javascript
