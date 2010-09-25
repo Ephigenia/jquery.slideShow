@@ -33,7 +33,11 @@ Want your site added to the list? Send me a message on github!
 
 # USAGE
 
-	$('div.slideShow').slideShow();
+There are a lot of examples in the `examples/` directory in the release
+showing how to use differnt options, alternate navigations and using of the
+slideshow instances.
+
+	var slideShow = $('div.slideShow').slideShow();
 	
 # OPTIONS
 
@@ -58,7 +62,6 @@ Want your site added to the list? Send me a message on github!
   custom callback called when a slide is clicked
 * `gotoSlide` [callback]  
   custom callback called when a new slide is triggered
-
 
 # UPDATES/FEEDBACK & BUGS
 
