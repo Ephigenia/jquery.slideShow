@@ -183,7 +183,7 @@
 			if (!(slideShow = $(this).data('slideShow'))) {
 				var slideShow = this;
 			}
-			return slideShow.options.interval;
+			return slideShow.interval;
 		}
 		// stop/play slideshow automatic 
 		this.togglePlayback = function() {

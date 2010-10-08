@@ -5,13 +5,17 @@ jQuery.slideShow, Readme File:
 # DESCRIPTION
 
 This is a very simple and very easy to use slideshow plugin for jquery.
-It will automatically create a slideshow with navigation out of your image list. The plugin also provides different callbacks and options that let you customize the way the slideShow react on mouse rollovers, clicks or slideChanges.
+It will automatically create a slideshow with navigation out of your image
+list. The plugin also provides different callbacks and options that let you
+customize the way the slideShow react on mouse rollovers, clicks or
+slideChanges.
 
 If you downloaded this file with the sources you should visit
 [jQuery.slideShow on github](http://github.com/Ephigenia/jquery.slideShow).
 
 The script is licensed under [MIT License](http://www.opensource.org/licenses/mit-license.php)
-and you can use it for free! All Images used are taken from the plugin’s author [Marcel Eichner](http://www.marceleichner.de/illustration/).
+and you can use it for free! All Images used are taken from the plugin’s
+author [Marcel Eichner](http://www.marceleichner.de/illustration/).
 
 # EXAMPLES
 
@@ -70,6 +74,10 @@ please visit the [jquery.slideShow Project Page on Github](http://github.com/Eph
 "issues".
 
 # CHANGELOG
+
+* 2010-10-08
+	* Fixed Issue 1 "ply/pause button not working" by using the right interval
+	  property in the code
 
 * 2010-09-25
 	* Added OPTIONS and USAGE part in this file
