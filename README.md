@@ -54,7 +54,7 @@ slideshow instances.
   indicates if the slideshow should start new when reached the last slide
 * `transition`  
 	* `mode` [string, default `fade`]  
-	  transition mode for slide changes
+	  transition mode for slide changes, can also use `slide`
 	* `speed` [integer, default `1000`]  
 	  speed of transition
 * `slideSize` [array, default `auto`]  
@@ -74,6 +74,9 @@ please visit the [jquery.slideShow Project Page on Github](http://github.com/Eph
 "issues".
 
 # CHANGELOG
+
+* 2010-10-27
+	* Added new option for transition mode `slide`
 
 * 2010-10-08
 	* Fixed Issue 1 "ply/pause button not working" by using the right interval
