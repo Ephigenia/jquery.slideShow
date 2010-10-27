@@ -46,7 +46,8 @@
 			slideSize: 		'auto',	// size for slides (used for mouseover and stuff)
 			hoverNavigation:false,	// enable mouse to change images 
 			slideClick: 	false,	// insert callback method for slide clicks
-			gotoSlide: 		false	// slide change callback
+			gotoSlide: 	false,	// slide change callback
+			mousePause:    false
 		};
 		this.options = $.extend({}, this.defaults, options);
 
@@ -138,7 +139,9 @@
 			this.find('.slide').mouseenter(function() {
 				var slideShow = $(this).data('slideShow');
 				slideShow.mouse.over = true;
-				slideShow.stopAuto();
+				if (!slideShow.options.mousePause){ // added conditional for mouse pausing animation
+				    slideShow.stopAuto();
+				}
 			});
 			
 			// mouse leave handler
