@@ -287,6 +287,22 @@
 							oldSlide.fadeOut(this.options.transition.speed, oldFinished);
 							newSlide.fadeIn(this.options.transition.speed, newFinished);
 							break;
+                                                case 'slide': // added by charles kline - ckline@discmakers.com						    
+						    if(this.current == -1)
+						    {
+							    oldSlide.hide(0,oldFinished);
+							    newSlide.show();
+							    break;
+						    }
+						    else
+						    {
+						        
+						        oldSite.animate({},{});
+						        oldSlide.hide("slide", {direction:"left"},this.options.transition.speed, oldFinished);
+						        newSlide.show("slide", {direction:"right"},this.options.transition.speed, newFinished);
+						        break;
+						    }
+
 					}
 				}
 			}
