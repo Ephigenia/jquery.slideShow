@@ -1,8 +1,8 @@
 /**
- *	jquery.slideShow (1.0.6)
- * 	by Marcel Eichner (www.marceleichner.de)
- * 	<love@ephigenia.de>
- *
+ *	jquery.slideShow (1.0.7)
+ * 	by Marcel Eichner (www.marceleichner.de) <love@ephigenia.de>
+ *		and charles kline <ckline@discmakers.com>
+ * 
  *	This simple slideshow plugin will provide your effect gallery with
  * 	some simple features:
  *
@@ -36,18 +36,18 @@
 
 		// private vars
 		this.defaults = {
-			start: 			0,		// start index, set to 'random' or 'rnd' to random start
-			interval: 		3,		// interval, autoplay, set to false for no auto-play, in seconds
-			repeat: 		true,	// repeat at the end
+			start: 0,		// start index, set to 'random' or 'rnd' to random start
+			interval: 3,	// interval, autoplay, set to false for no auto-play, in seconds
+			repeat: true,	// repeat at the end
 			transition: {
 				mode: 'fade',
 				speed: 1000
 			},
-			slideSize: 		'auto',	// size for slides (used for mouseover and stuff)
+			slideSize: 'auto',	// size for slides (used for mouseover and stuff)
 			hoverNavigation:false,	// enable mouse to change images 
-			slideClick: 	false,	// insert callback method for slide clicks
-			gotoSlide: 	false,	// slide change callback
-			mousePause:    false
+			slideClick: false,	// insert callback method for slide clicks
+			gotoSlide: false,		// slide change callback
+			mousePause: false 	// set to true to stop animation on mouse hover
 		};
 		this.options = $.extend({}, this.defaults, options);
 
@@ -290,22 +290,16 @@
 							oldSlide.fadeOut(this.options.transition.speed, oldFinished);
 							newSlide.fadeIn(this.options.transition.speed, newFinished);
 							break;
-                                                case 'slide': // added by charles kline - ckline@discmakers.com						    
-						    if(this.current == -1)
-						    {
-							    oldSlide.hide(0,oldFinished);
-							    newSlide.show();
-							    break;
-						    }
-						    else
-						    {
-						        
-						        oldSite.animate({},{});
-						        oldSlide.hide("slide", {direction:"left"},this.options.transition.speed, oldFinished);
-						        newSlide.show("slide", {direction:"right"},this.options.transition.speed, newFinished);
-						        break;
-						    }
-
+						case 'slide': // added by charles kline - ckline@discmakers.com
+							if (this.current == -1) {
+								oldSlide.hide(0, oldFinished);
+								newSlide.show();
+							} else {
+								oldSlide.animate({},{});
+								oldSlide.animate({width: 'hide'}, this.options.transition.speed, oldFinished);
+								newSlide.animate({width: 'show'}, this.options.transition.speed, newFinished);
+							}
+							break;
 					}
 				}
 			}

@@ -1,6 +1,6 @@
 jQuery.slideShow, Readme File:
 ==============================================================================
-2010-08-22, [Marcel Eichner // Ephigenia](love@ephigenia.de)
+2011-04-21, [Marcel Eichner // Ephigenia](love@ephigenia.de)
 
 # DESCRIPTION
 
@@ -20,6 +20,7 @@ author [Marcel Eichner](http://www.marceleichner.de/illustration/).
 # EXAMPLES
 
 * [10hoch16.de](http://www.10hoch16.de)
+* [Garmin](http://www.garmin.com/)
 * [The Weinmeister](http://www.the-weinmeister.com/)
 * [Designhotel Elephant](http://www.designhotel-elephant.com/)
 
@@ -34,6 +35,7 @@ Want your site added to the list? Send me a message on github!
 * Navigate to slides via navigation links, hover cursor position
 * Automatic slide size detection, event works with different heights
 * Instance of slideshow returned, manipulating slideshow via JS
+* different animation types, so far: `fade` and `slide`
 
 # USAGE
 
@@ -66,6 +68,8 @@ slideshow instances.
   custom callback called when a slide is clicked
 * `gotoSlide` [callback]  
   custom callback called when a new slide is triggered
+* `mousePause` [boolean]  
+  set to true if you want to pause the animation on mouse hover over a slide
 
 # UPDATES/FEEDBACK & BUGS
 
@@ -77,6 +81,7 @@ please visit the [jquery.slideShow Project Page on Github](http://github.com/Eph
 
 * 2010-10-27
 	* Added new option for transition mode `slide`
+	* Added conditional for pausing animation on hover with mouse
 
 * 2010-10-08
 	* Fixed Issue 1 "ply/pause button not working" by using the right interval
