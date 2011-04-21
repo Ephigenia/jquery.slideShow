@@ -159,7 +159,7 @@
 				});
 			}
 
-			g = this.current;
+			var g = this.current;
 			this.current = -1;
 			this.gotoSlide(g);
 			// start interval for auto animation
@@ -248,7 +248,7 @@
 			var oldSlide = this.find('.slide:eq(' + this.current +')');
 			var newSlide = this.find('.slide:eq(' + index +')');
 			// callbacks for animation finished
-			oldFinished = function () {
+			var oldFinished = function () {
 				$(this).removeClass('selected');
 				if (!(slideShow = $(this).data('slideShow'))) {
 					var slideShow = this;
@@ -258,7 +258,7 @@
 					slideShow.auto();
 				}
 			}
-			newFinished = function() {
+			var newFinished = function() {
 				if (!(slideShow = $(this).data('slideShow'))) {
 					var slideShow = this;
 				}
