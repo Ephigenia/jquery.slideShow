@@ -2,7 +2,8 @@
  *	jquery.slideShow (1.0.7)
  * 	by Marcel Eichner (www.marceleichner.de) <love@ephigenia.de>
  *		and charles kline <ckline@discmakers.com>
- * 
+ *		and juerg langhard@greenbanana.ch <langhard@greenbanana.ch>
+ *
  *	This simple slideshow plugin will provide your effect gallery with
  * 	some simple features:
  *
@@ -298,6 +299,18 @@
 								oldSlide.animate({},{});
 								oldSlide.animate({width: 'hide'}, this.options.transition.speed, oldFinished);
 								newSlide.animate({width: 'show'}, this.options.transition.speed, newFinished);
+							}
+							break;
+						case 'slide2': // added by juerg langhard - langhard@greenbanana.ch
+							if (this.current == -1) {
+								oldSlide.hide(0, oldFinished);
+								newSlide.show();
+							} else {
+								oldSlide.animate({},{});
+								oldSlide.animate({left: '-'+oldSlide.width()+'px'}, this.options.transition.speed, oldFinished);
+								newSlide.show();
+								newSlide.css('left', oldSlide.width()+'px');
+								newSlide.animate({left: '0px'}, this.options.transition.speed, newFinished);
 							}
 							break;
 					}
