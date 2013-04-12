@@ -14,7 +14,14 @@
 	clear: both;
 	margin-bottom: 10px;
 }
-
+.dynamic li
+{	text-align:center;
+	height:256px !important; /* Fixed height for slider */
+	width:600px !important;  /* Fixed width for slider */
+}
+.loader
+{	margin-top:17%;
+}
 /** navigation **/
 .slideShow .navigation {
 	margin: 5px 0px 0px 0px;

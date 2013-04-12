@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<head>
+	<title>jQuery slideshow plugin Examples // Marcel Eichner // Ephigenia</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="jQuery.slideshow, slideshow Plugin, jquery slideshow plugin, simple plugin, easy slideshow, slideshow callback, jquery gallery, javascript slideshow" />
+	<meta name="robots" content="index, follow" />
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+	<link href="css/slideshow.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="../src/jquery.onload.slideshow.js"></script>
+</head>
+<body>
+	<div id="app">
+		<h1>jQuery.slideShow</h1>
+		<h2>Navigation Position</h2>
+		<div class="slideShow">
+			<ol class="navigation topNavigation">
+				<li><a href="javascript:void(0);" class="page">1</a></li>
+				<li><a href="javascript:void(0);" class="page">2</a></li>
+				<li><a href="javascript:void(0);" class="page">3</a></li>
+				<li><a href="javascript:void(0);" class="page">4</a></li>
+			</ol>
+			<ul class="slides dynamic">
+				<li class="slide" data-href="img/1.jpg"><img src="img/image-loader.gif" border="0" alt="" class="loader" /></li>
+				<li class="slide" data-href="img/2.jpg"><img src="img/image-loader.gif" border="0" alt="" class="loader" /></li>
+				<li class="slide" data-href="img/3.jpg"><img src="img/image-loader.gif" border="0" alt="" class="loader" /></li>
+				<li class="slide" data-href="img/4.jpg"><img src="img/image-loader.gif" border="0" alt="" class="loader" /></li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				// simplest example
+				$('.slideShow').slideShow({
+					interval: 3
+				});
+			});
+		</script>
+	</div>
+</div>
